@@ -1,4 +1,4 @@
-source: inspections is table('duckdb:rows.csv') {
+source: inspections is table('duckdb:data.parquet') {
   where: `INSPECTION DATE` > @2000
   measure: 
     inspection_count is count()
