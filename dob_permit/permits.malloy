@@ -1,0 +1,9 @@
+source: permits is table('duckdb:permits.parquet') {
+  measure:
+    permit_count is count()
+
+  query: by_owners_city is {
+    group_by: foo is `Owner’s House City` 
+    aggregate: permit_count
+  }
+}

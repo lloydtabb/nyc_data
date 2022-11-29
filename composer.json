@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "id": "inspections",
+      "path": "restaurant_inspections/composer.json"
+    },
+    {
+      "id": "NYC Dept of Building Permits",
+      "path": "dob_permit/composer.json"
+    }
+  ],
+  "readme": "./nyc_data.md"
+}

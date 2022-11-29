@@ -1,0 +1,13 @@
+{
+  "title": "DOB Permits",
+  "readme": "permits.md",
+  "models": [
+    {
+      "id": "permits",
+      "path": "permits.malloy",
+      "tables": [
+        "permits.parquet"
+      ]
+    }
+  ]
+}

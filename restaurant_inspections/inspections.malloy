@@ -1,0 +1,62 @@
+source: inspections is table('duckdb:rows.csv') {
+  where: `INSPECTION DATE` > @2000
+  measure: 
+    inspection_count is count()
+    restaurant_count is count(distinct CAMIS)
+
+  query: by_grade is {
+    where: GRADE != NULL
+    group_by: GRADE
+    aggregate: inspection_count, restaurant_count
+    order_by: GRADE
+  }
+
+  query: by_violation is {
+    group_by: 
+      `VIOLATION CODE`
+      `VIOLATION DESCRIPTION`
+    aggregate: inspection_count
+    nest: by_grade
+    limit: 100
+  }
+  by_location is {
+    group_by: 
+      DBA
+      BUILDING
+      STREET
+      ZIPCODE
+    aggregate: inspection_count
+    limit: 10
+  }
+
+  by_week_line_chart is {
+    group_by: inspection_week is `INSPECTION DATE`.week
+    aggregate: inspection_count
+  }
+
+  query: violation_dashboard is {
+    group_by: 
+      `VIOLATION CODE`
+      `VIOLATION DESCRIPTION`
+    aggregate: inspection_count, restaurant_count
+    nest: 
+      by_grade
+      by_location
+      by_week_line_chart
+    limit: 20
+  }
+
+  query: inspection_detail is {
+    group_by: 
+      `INSPECTION DATE`
+      CAMIS
+      DBA
+      BORO
+      `INSPECTION TYPE`
+      GRADE
+      SCORE
+      `VIOLATION CODE`
+      `VIOLATION DESCRIPTION`
+    limit: 100
+  }
+}

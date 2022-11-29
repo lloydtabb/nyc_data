@@ -1,0 +1,16 @@
+{
+  "readme": "inspections.md",
+  "title": "Restaurant Inspections",
+  "models": [
+    {
+      "id": "inspections",
+      "path": "inspections.malloy",
+      "tables": [
+        {
+          "name": "rows.csv",
+          "url":"https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv"
+        }
+      ]
+    }
+  ]
+}
