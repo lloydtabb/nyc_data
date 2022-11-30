@@ -9,7 +9,7 @@
         {
           "name": "data.parquet",
           "urlx":"https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv",
-          "url": "https://github.com/lloydtabb/nyc_data/releases/download/violations/data.parquet"
+          "url": "https://raw.githubusercontent.com/lloydtabb/nyc_data/releases/download/violations/data.parquet"
         }
       ]
     }
