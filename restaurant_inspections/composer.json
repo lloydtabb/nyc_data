@@ -8,8 +8,8 @@
       "tables": [
         {
           "name": "data.parquet",
-          "urlx":"https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv",
-          "url": "https://raw.githubusercontent.com/lloydtabb/nyc_data/releases/download/violations/data.parquet"
+          "urly":"https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv",
+          "urlx": "https://api.github.com/repos/lloydtabb/nyc_data/releases/assets/86410411"
         }
       ]
     }
