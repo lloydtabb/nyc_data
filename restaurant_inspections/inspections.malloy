@@ -11,6 +11,13 @@ source: inspections is table('duckdb:data.parquet') {
     order_by: GRADE
   }
 
+  query: by_gradex is {
+    where: GRADE != NULL
+    group_by: GRADE
+    aggregate: inspection_count, restaurant_count
+    order_by: GRADE
+  }
+
   query: by_violation is {
     group_by: 
       `VIOLATION CODE`
